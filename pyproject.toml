@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "translator-bot"
+version = "0.1.0"
+description = ""
+authors = ["sonic_72_kon <kko160305@mail.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+betterlogging = "^1.0.0"
+aiogram = "^3.14.0"
+pydantic-settings = "^2.6.1"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.10.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
