@@ -1,12 +1,3 @@
-#services:
-#  libretranslate:
-#    image: libretranslate/libretranslate:latest
-#    container_name: libretranslate
-#    restart: always
-#    ports:
-#      - "5001:5000"
-#    command: ["--host", "0.0.0.0", "--port", "5000", "--load-only", "en,ru"]
-
 services:
   tg_bot:
     image: translator_bot_image
@@ -31,6 +22,7 @@ services:
       - translator_network
     depends_on:
       - libretranslate
+    mem_limit: 512M
 
   libretranslate:
     image: libretranslate/libretranslate:latest
@@ -43,6 +35,7 @@ services:
       - libretranslate_data:/data
     networks:
       - translator_network
+    mem_limit: 512M
 
 networks:
   translator_network:
